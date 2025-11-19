@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+
+ <title>Formulario de Registro</title>
+    <form action="#" method="post">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="0" max="120">
+
+        <label for="curso">Has probado el juego?</label>
+        <select id="curso" name="curso">
+            <option value="">Selecciona...</option>
+            <option>Si</option>
+            <option>No</option>
+        </select>
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios..."></textarea>
+
+        <label>
+            <input type="checkbox" name="boletin" value="sí">
+            Deseo recibir correos de nueva información?
+        </label>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <footer>
+    <nav>
+        <a href="index.html">Volver a la pagina principal</a>
+    </nav>
+</footer>
