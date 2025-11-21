@@ -9,93 +9,124 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.5;
-            margin: 20px;
-            background-color: #fff; /* Fondo claro */
-            color: #333; /* Texto oscuro */
+            margin: 0;
+            background-color: #fff;
+            color: #333;
             text-align: center;
         }
 
-        /* Encabezados */
-        h1 {
-            color: #C8102E; /* Rojo oscuro */
+        /* Encabezados con IDs para estilos distintos */
+        h1#titulo-principal {
+            color: #C8102E;
+            font-size: 36px;
+            margin-bottom: 10px;
         }
         h2 {
             color: #C8102E;
+            font-size: 28px;
+            margin-bottom: 8px;
         }
         h3 {
             color: #C8102E;
+            font-size: 22px;
+            margin-bottom: 5px;
         }
 
-        /* Navegación */
-        nav {
-            margin: 10px 0;
+        /* Navegación horizontal */
+        nav.horizontal {
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+            padding: 10px 0;
+            margin-bottom: 20px;
         }
-        nav a {
-            margin-right: 15px;
+        nav.horizontal a {
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
-            color: #000; /* Negro */
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
-        nav a:hover {
-            color: #C8102E;
+        nav.horizontal a:hover {
+            background-color: #C8102E;
         }
 
-        /* Secciones */
+        /* Secciones semánticas */
         section {
             background-color: #fff;
             padding: 20px;
             margin: 0 auto 30px auto;
-            border: 1px solid #000; /* Borde negro */
+            border: 1px solid #000;
             border-radius: 10px;
             max-width: 800px;
             text-align: left;
         }
 
-        /* Tabla */
+        /* Tablas con formato completo */
         table {
             border-collapse: collapse;
             width: 100%;
             margin-top: 10px;
         }
-        th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
+        table#modos-juego th {
             background-color: #C8102E;
             color: #fff;
+            border: 2px solid #000;
+            padding: 10px;
+            text-align: center;
+        }
+        table#modos-juego td {
+            background-color: #f9f9f9;
+            color: #000;
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
         }
 
+        /* Listas decoradas */
+        ol, ul {
+            margin-left: 20px;
+            padding-left: 0;
+        }
+        ol li {
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        ul li {
+            list-style-type: square;
+            margin-bottom: 5px;
+        }
 
+        /* Formularios completos */
         form {
             background-color: #fff;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
-            border: 1px solid #000;
+            border: 2px solid #000;
             max-width: 600px;
             margin: 0 auto;
             text-align: left;
         }
-        label {
+        form label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
             color: #C8102E;
         }
-        input, select, textarea {
+        form input, form select, form textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #000;
             border-radius: 5px;
+            font-size: 14px;
         }
-        input:focus, select:focus, textarea:focus {
+        form input:focus, form select:focus, form textarea:focus {
             border-color: #C8102E;
-            outline: none;
             box-shadow: 0 0 5px rgba(200,16,46,0.5);
         }
-        button {
+        form button {
             background-color: #000;
             color: white;
             border: none;
@@ -104,9 +135,37 @@
             border-radius: 5px;
             font-size: 16px;
         }
-        button:hover {
+        form button:hover {
             background-color: #C8102E;
         }
+
+        /* Enlaces externos decorados */
+        a.enlace-externo {
+            color: #C8102E;
+            text-decoration: underline dashed;
+        }
+        a.enlace-externo:hover {
+            color: #000;
+            text-decoration: none;
+        }
+
+
+        header {
+            background-color: #c3c3c3;
+            color: #000000;
+            padding: 20px 0;
+        }
+        header img {
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+
 
         video {
             display: block;
@@ -114,10 +173,14 @@
             max-width: 100%;
         }
 
-        footer {
-            margin-top: 20px;
+        {
             text-align: center;
-            color: #000;
+        }
+        {
+            text-align: right;
+        }
+        {
+            text-align: left;
         }
     </style>
 
