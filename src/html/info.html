@@ -1,12 +1,246 @@
 <!DOCTYPE html>
+
 <html lang="es">
-<meta charset="UTF-8">
-<title>información del juego</title>
+<head>
+    <meta charset="UTF-8">
+    <title>NBA 2K</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 20px;
+            background-color: #fff; /* Fondo claro */
+            color: #333; /* Texto oscuro */
+            text-align: center;
+        }
+
+        /* Encabezados */
+        h1 {
+            color: #C8102E; /* Rojo oscuro */
+        }
+        h2 {
+            color: #C8102E;
+        }
+        h3 {
+            color: #C8102E;
+        }
+
+        /* Navegación */
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #000; /* Negro */
+        }
+        nav a:hover {
+            color: #C8102E;
+        }
+
+        /* Secciones */
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 auto 30px auto;
+            border: 1px solid #000; /* Borde negro */
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        /* Tabla */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #C8102E;
+            color: #fff;
+        }
+
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #000;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #C8102E;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #C8102E;
+            outline: none;
+            box-shadow: 0 0 5px rgba(200,16,46,0.5);
+        }
+        button {
+            background-color: #000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #C8102E;
+        }
+
+        video {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #000;
+        }
+    </style>
+
+
+</head>
 <body>
-    <h1>Información general del juego</h1>
-    <h2>De que trata el juego</h2>
+<header>
+    <img src="imagenes/logo 2k.png" width="500" height="100" alt="Logo NBA 2K">
+    <h1>Guía del juego NBA 2K26</h1>
+    <audio controls>
+        <source src="Audios/Embrace It.mp3" type="audio/mp3">
+    </audio>
+    <nav>
+        <a href="#informacion">Información</a>
+        <a href="#modos">Modos de juego</a>
+        <a href="#builds">Builds</a>
+        <a href="#formulario">Formulario</a>
+    </nav>
+</header>
+
+
+<section id="informacion">
+    <h2>Información general del juego</h2>
     <p>El juego trata sobre la NBA, donde el jugador puede crear su propio personaje con estadísticas y atributos totalmente personalizados. A lo largo de la historia, deberás superar desafíos para llegar a la NBA, romper récords y ganar el campeonato.</p>
-    <p>Además, podrás mejorar las habilidades de tu jugador hasta alcanzar los atributos que hayas elegido.
-El juego también incluye un modo online, en el que puedes competir con el mismo personaje contra otros jugadores de todo el mundo.</p>
+    <p>Además, podrás mejorar las habilidades de tu jugador hasta alcanzar los atributos que hayas elegido. El juego también incluye un modo online, en el que puedes competir con el mismo personaje contra otros jugadores de todo el mundo.</p>
+</section>
+
+<section id="modos">
+    <h2>Modos de juego</h2>
+    <h3>De progresión</h3>
+    <ol>
+        <li><strong>MyCareer:</strong> Creas un jugador personalizado, haces tu recorrido profesional (incluyendo la zona de ciudad/park), mejoras atributos, participas en temporadas y retos.</li>
+        <li><strong>MyNBA:</strong> Modo de franquicia donde gestionas un equipo de la NBA (o WNBA), temporada tras temporada, incluyendo ajustes de plantilla, tácticas, etc.</li>
+        <li><strong>MyGM:</strong> Similar al modo gestión, pero enfocado aún más en el rol de general manager. Incluye novedades para 2K26: los playoffs se pueden jugar online.</li>
+        <li><strong>MyWNBA / The W:</strong> Enfocados en la liga femenina de baloncesto. The W permite crear tu jugadora y progresar, MyWNBA gestionar equipos de la WNBA.</li>
+        <li><strong>MyTeam:</strong> Montas un equipo propio a base de cartas de jugadores (NBA + WNBA por primera vez en esta edición) y compites con él.</li>
+    </ol>
+
+    <h3>Modos online</h3>
+    <ul>
+        <li><strong>The City / The Park:</strong> Áreas sociales online donde tu personaje de MyCareer puede jugar contra otros en modos 2v2, 3v3, etc.</li>
+        <li><strong>The Theater:</strong> Modo de retos rápidos en la ciudad/park con formatos variados (1v1, 2v2, squads).</li>
+        <li><strong>Triple Threat / Showdown / Breakout & Gauntlet:</strong> Modos dentro de MyTeam o independientes para sesiones más cortas, con reglas especiales.</li>
+        <li><strong>Play Now:</strong> Partido rápido entre equipos actuales o históricos, offline u online.</li>
+        <li><strong>Modos tutorial / práctica:</strong> Ejemplo: Learn2K, que sirve para aprender los controles o mecánicas del juego.</li>
+    </ul>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Modo de juego</th>
+            <th>Online</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>MyCareer</td><td>Sí*</td></tr>
+        <tr><td>MyNBA</td><td>No</td></tr>
+        <tr><td>MyGM</td><td>Parcial**</td></tr>
+        <tr><td>MyWNBA / The W</td><td>No</td></tr>
+        <tr><td>MyTeam</td><td>Sí</td></tr>
+        <tr><td>The City / The Park</td><td>Sí</td></tr>
+        <tr><td>The Theater</td><td>Sí</td></tr>
+        <tr><td>Triple Threat / Showdown / Breakout & Gauntlet</td><td>Sí</td></tr>
+        <tr><td>Play Now</td><td>Sí</td></tr>
+        <tr><td>Modos tutorial / práctica</td><td>No</td></tr>
+        </tbody>
+    </table>
+    <p><strong>Notas:</strong><br>
+        * MyCareer tiene contenido online principalmente en la zona de The City / The Park.<br>
+        ** MyGM tiene algunas funciones online, como playoffs online, pero la gestión principal es offline.
+    </p>
+</section>
+
+<section id="builds">
+    <h2>Builds</h2>
+    <p>Bienvenido al apartado de builds. Aquí podemos encontrar unas cuantas builds que están en el meta actual.</p>
+    <h3>Build para jugadores bases pequeños:</h3>
+    <video controls width="600">
+        <source src="videos/build base pequeño.mp4" type="video/mp4">
+    </video>
+    <h3>Build de base alto que puede hacer de todo:</h3>
+    <video controls width="600">
+        <source src="videos/build base hace de todo.mp4" type="video/mp4">
+    </video>
+    <h3>Build pivot pequeño:</h3>
+    <video controls width="600">
+        <source src="videos/build pivot pequeño.mp4" type="video/mp4">
+    </video>
+    <h3>Build pivot máxima altura:</h3>
+    <video controls width="600">
+        <source src="videos/build pivot alto.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section id="formulario">
+    <h2>Formulario de registro</h2>
+    <form action="#" method="post">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required><br><br>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required><br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="0" max="120"><br><br>
+
+        <label for="curso">Has probado el juego?</label>
+        <select id="curso" name="curso">
+            <option value="">Selecciona...</option>
+            <option>Si</option>
+            <option>No</option>
+        </select><br><br>
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios..."></textarea><br><br>
+
+        <label>
+            <input type="checkbox" name="boletin" value="sí">
+            Deseo recibir correos de nueva información
+        </label><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
 </body>
 </html>
