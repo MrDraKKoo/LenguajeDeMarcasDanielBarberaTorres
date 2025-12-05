@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <style>
+    body {
+    background-image: url("img/biblioteca.jpeg");
+    background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+
+    h1{
+        background: darkgoldenrod;
+        text-align: center;
+        color: white;
+        padding: 15px 10px;
+        margin-bottom: 0;
+    }
+
+    form {
+    background-color: white;
+    width: 80%;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 5px;
+    border: 2px solid darkgoldenrod;
+    }
+
+    label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+
+    button[type="submit"] {
+    background-color: darkgoldenrod;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    }
+
+    button[type="submit"]:hover {
+    background-color: #b58d3d;
+    }
+    nav{
+        background: darkgoldenrod;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+<h1>Biblioteca</h1>
+<nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="Catálogo.html">Catálogo</a>
+    <a href="main.html">Pagina principal</a>
+    <a href="Servicios.html">Servicios</a>
+</nav>
+<form action="#" method="post">
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required><br><br>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required><br><br>
+
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" min="0" max="120"><br><br>
+
+    <label for="curso">Has leído algun libro de nuestra biblioteca</label>
+    <select id="curso" name="curso">
+        <option value="">Selecciona...</option>
+        <option>Si</option>
+        <option>No</option>
+    </select><br><br>
+
+    <label for="comentarios">Comentarios:</label>
+    <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios..."></textarea><br><br>
+
+    <label>
+        <input type="checkbox" name="boletin" value="sí">
+        Deseo recibir correos de nueva información
+    </label><br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+</body>
+</html>

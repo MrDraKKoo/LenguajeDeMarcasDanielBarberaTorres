@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo básico de CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Enlazamos la hoja de estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Mi Primera Web</h1>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#inicio" id="link-inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#tabla-precios">Precios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container">
+        <h2>Bienvenido a mi página</h2>
+        <p>
+          Esta es una página de ejemplo para aprender 
+          <span class="resaltado">CSS en 1º DAW</span>.
+        </p>
+        <a href="#servicios" class="btn btn-primario">Ver servicios</a>
+        <a href="#contacto" class="btn btn-secundario">Contactar</a>
+      </div>
+    </section>
+
+    <section id="servicios" class="section">
+      <div class="container">
+        <h2>Servicios</h2>
+        <p class="section-desc">
+          Aquí mostramos algunos servicios con un diseño en tarjetas.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Diseño web</h3>
+            <p>Maquetación moderna usando HTML y CSS.</p>
+            <a href="#" class="link-detalle">Más info</a>
+          </article>
+
+          <article class="card destacado">
+            <h3>Desarrollo backend</h3>
+            <p>Aplicaciones robustas con bases de datos.</p>
+            <a href="#" class="link-detalle">Más info</a>
+          </article>
+
+          <article class="card">
+            <h3>Soporte técnico</h3>
+            <p>Resolvemos incidencias y dudas técnicas.</p>
+            <a href="#" class="link-detalle">Más info</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tabla-precios" class="section">
+      <div class="container">
+        <h2>Tabla de precios</h2>
+        <table class="tabla-precios">
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Precio</th>
+              <th>Características</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Básico</td>
+              <td>19 €/mes</td>
+              <td>1 página, soporte por email</td>
+            </tr>
+            <tr class="fila-destacada">
+              <td>Profesional</td>
+              <td>39 €/mes</td>
+              <td>Hasta 5 páginas, soporte 24/7</td>
+            </tr>
+            <tr>
+              <td>Empresa</td>
+              <td>79 €/mes</td>
+              <td>Web a medida y consultoría</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <aside class="aside-info">
+      <div class="container">
+        <h2>Información adicional</h2>
+        <p>
+          Este bloque está en un <strong>&lt;aside&gt;</strong> para mostrar contenido relacionado.
+        </p>
+      </div>
+    </aside>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2>Contacto</h2>
+        <form class="form-contacto">
+          <div class="form-grupo">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+          </div>
+
+          <div class="form-grupo">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com">
+          </div>
+
+          <div class="form-grupo">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primario">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 - Mi Primera Web</p>
+    </div>
+  </footer>
+
+</body>
+</html>

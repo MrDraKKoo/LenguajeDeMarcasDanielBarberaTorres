@@ -1,0 +1,331 @@
+/* =============================
+   RESET BÁSICO Y VARIABLES
+   ============================= */
+
+/* Quitamos márgenes y paddings por defecto y controlamos el box model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables CSS (custom properties) */
+:root {
+  --color-primario: #1e88e5;
+  --color-secundario: #ff9800;
+  --color-fondo: #f5f5f5;
+  --color-texto: #333333;
+  --color-blanco: #ffffff;
+  --color-borde: #dddddd;
+  --fuente-base: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* =============================
+   ESTILOS GENERALES
+   ============================= */
+
+body {
+  font-family: var(--fuente-base);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+/* Contenedor reutilizable centrado */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Enlaces globales */
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+/* Pseudoclase :hover */
+a:hover {
+  text-decoration: underline;
+}
+
+/* =============================
+   CABECERA Y NAVEGACIÓN
+   ============================= */
+
+.site-header {
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid var(--color-borde);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Selector de clase */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+/* Flexbox básico para alinear logo y menú */
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Menú principal */
+.main-nav ul {
+  list-style: none;
+  display: flex;              /* flex -> explicación layout básico */
+  gap: 1rem;                  /* espacio entre elementos (propiedad moderna) */
+}
+
+.main-nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+/* Pseudoclase con combinador de descendientes */
+.main-nav a:hover {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+/* Ejemplo de ID (solo para mostrar, no necesario funcionalmente) */
+#link-inicio {
+  text-transform: uppercase;
+}
+
+/* =============================
+   SECCIÓN "HERO"
+   ============================= */
+
+.hero {
+  background: linear-gradient(135deg, var(--color-primario), #4fc3f7);
+  color: var(--color-blanco);
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Pseudoelemento ::first-letter */
+.hero h2::first-letter {
+  font-size: 2.6rem;
+}
+
+/* Selector de clase simple */
+.resaltado {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+/* =============================
+   BOTONES REUTILIZABLES
+   ============================= */
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px; /* pill */
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease,
+              transform 0.1s ease;  /* transición (animación suave) */
+}
+
+/* Modificador de clase (BEM-like) */
+.btn-primario {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+}
+
+.btn-secundario {
+  background-color: var(--color-blanco);
+  color: var(--color-primario);
+}
+
+/* :hover + transform para efecto “clic” */
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Pseudoclase :active */
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* =============================
+   SECCIONES GENERALES
+   ============================= */
+
+.section {
+  padding: 2rem 0;
+}
+
+/* Selector por tipo + descendiente */
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-desc {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* =============================
+   TARJETAS DE SERVICIOS
+   ============================= */
+
+.cards {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Ejemplo de selector de tipo + clase */
+.card {
+  flex: 1;
+  background-color: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Pseudoclases estructurales */
+.cards .card:first-child {
+  border-left: 4px solid var(--color-primario);
+}
+
+.cards .card:last-child {
+  border-right: 4px solid var(--color-secundario);
+}
+
+/* Clase extra “destacado” (combinación de clases) */
+.card.destacado {
+  border: 2px solid var(--color-secundario);
+}
+
+/* Hijo directo > */
+.card > h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Hermano adyacente: estilo al párrafo que sigue a h3 */
+.card h3 + p {
+  font-size: 0.95rem;
+}
+
+/* Enlace dentro de la tarjeta */
+.link-detalle {
+  display: inline-block;  /* para margen superior */
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* =============================
+   TABLA DE PRECIOS
+   ============================= */
+
+.tabla-precios {
+  width: 100%;
+  border-collapse: collapse; /* sin huecos entre celdas */
+  margin-top: 1rem;
+  background-color: var(--color-blanco);
+}
+
+/* Agrupación de selectores */
+.tabla-precios th,
+.tabla-precios td {
+  border: 1px solid var(--color-borde);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+/* Encabezados */
+.tabla-precios th {
+  background-color: #eeeeee;
+}
+
+/* Fila destacada (clase) */
+.fila-destacada {
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+/* Pseudoclase :nth-child para filas pares */
+.tabla-precios tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* =============================
+   ASIDE
+   ============================= */
+
+.aside-info {
+  background-color: #eeeeee;
+  padding: 1.5rem 0;
+  margin: 2rem 0;
+}
+
+/* =============================
+   FORMULARIO DE CONTACTO
+   ============================= */
+
+.form-contacto {
+  background-color: var(--color-blanco);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-borde);
+}
+
+/* Display block, margin… */
+.form-grupo {
+  margin-bottom: 1rem;
+}
+
+/* label + input/textarea */
+.form-grupo label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-borde);
+  font: inherit;
+}
+
+/* Pseudoclases de formulario */
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.2);
+}
+
+/* =============================
+   PIE DE PÁGINA
+   ============================= */
+
+.site-footer {
+  margin-top: 2rem;
+  background-color: #222;
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
