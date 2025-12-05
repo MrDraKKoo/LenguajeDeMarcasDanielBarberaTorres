@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clasificador de Imágenes por Archivo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* ===== ESTILOS BÁSICOS Y LIMPIOS ===== */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #333;
+        }
+
+        /* Contenedor principal */
+        .container {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        /* Estado del modelo */
+        #load-status {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Botón */
+        button {
+            padding: 10px 20px;
+            background-color: #4a6cf7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3b5be0;
+        }
+
+        button.loaded {
+            display: none;
+        }
+
+        /* Input archivo */
+        input[type="file"] {
+            margin: 20px 0;
+        }
+
+        /* Imagen */
+        #image-container {
+            border: 1px solid #ccc;
+            min-height: 150px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #image-container img {
+            max-width: 100%;
+            max-height: 250px;
+        }
+
+        /* Resultados */
+        #label-container div {
+            margin: 8px 0;
+            padding: 8px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Clasificador de Teachable Machine</h2>
+<div id="load-status">Modelo no cargado. Presiona 'Cargar modelo'.</div>
+
+<button id="load-button" type="button" onclick="init()">Cargar modelo</button>
+<br><br>
+
+<input type="file" id="image-input" accept="image/*" onchange="handleImage(this)">
+<div id="image-container"></div>
+
+<div id="label-container"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+<script type="text/javascript">
+    // RUTA DE TU MODELO (NO MODIFICABLE)
+    const URL = "https://teachablemachine.withgoogle.com/models/P31f6ecAd/";
+
+    let model, labelContainer, maxPredictions;
+    const loadStatusElement = document.getElementById("load-status");
+    const loadButton = document.getElementById("load-button");
+    const imageInput = document.getElementById("image-input");
+
+    // Cargar el modelo
+    async function init() {
+        if (model) return; // Ya está cargado
+
+        loadStatusElement.innerHTML = "Cargando modelo... por favor espera.";
+
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        try {
+            // carga del modelo y metadatos
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // preparar contenedor de etiquetas
+            labelContainer = document.getElementById("label-container");
+            labelContainer.innerHTML = "";
+            for (let i = 0; i < maxPredictions; i++) {
+                labelContainer.appendChild(document.createElement("div"));
+            }
+
+            loadStatusElement.innerHTML = "✅ Modelo cargado y listo.";
+            loadButton.classList.add('loaded'); // Ocultar el botón al cargar
+            imageInput.disabled = false;
+
+        } catch (error) {
+            loadStatusElement.innerHTML = "❌ Error al cargar. Verifica que el enlace sea correcto.";
+            console.error("Error al cargar el modelo:", error);
+        }
+    }
+
+    // Función que se llama al seleccionar una imagen
+    async function handleImage(input) {
+        if (!input.files || !input.files[0]) return;
+
+        // 1. Cargar el modelo si aún no se ha hecho
+        if (!model) {
+            await init();
+        }
+
+        // Si el modelo falló al cargar, salimos
+        if (!model) return;
+
+        const file = input.files[0];
+        const img = document.createElement("img");
+
+        // 2. Establecer la fuente de la imagen
+        img.src = window.URL.createObjectURL(file);
+
+        // 3. Esperar a que la imagen se cargue completamente y ejecutar la predicción
+        img.onload = async () => {
+            const imageContainer = document.getElementById("image-container");
+            imageContainer.innerHTML = "";
+            imageContainer.appendChild(img);
+
+            await predict(img); // Lanza la predicción
+        };
+    }
+
+    // Función para clasificar la imagen
+    async function predict(imgElement) {
+        // Limpiar resultados anteriores
+        labelContainer.innerHTML = 'Prediciendo...';
+
+        const prediction = await model.predict(imgElement);
+
+        // Mostrar los resultados
+        labelContainer.innerHTML = '';
+        for (let i = 0; i < maxPredictions; i++) {
+            const probability = (prediction[i].probability * 100).toFixed(2); // Convertir a porcentaje
+            const classPrediction =
+                "**" + prediction[i].className + "**: " + probability + "%";
+
+            const div = document.createElement("div");
+            div.innerHTML = classPrediction;
+            labelContainer.appendChild(div);
+        }
+    }
+</script>
+</body>
+</html>
