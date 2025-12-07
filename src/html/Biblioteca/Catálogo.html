@@ -1,10 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Catálogo</title>
+    <style>
+        body {
+            background-image: url("img/biblioteca.jpeg");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        h1 {
+            background: darkgoldenrod;
+            text-align: center;
+            color: white;
+            padding: 15px 10px;
+            margin-bottom: 0;
+        }
+
+        nav {
+            background: darkgoldenrod;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+
+        .catalogo {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .libro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            border: 2px solid darkgoldenrod;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .libro img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .libro h3 {
+            margin: 10px 0;
+            color: darkgoldenrod;
+        }
+
+        .libro p {
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+
+<h1>Biblioteca</h1>
+
+<nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="Catálogo.html">Catálogo</a>
+    <a href="main.html">Página principal</a>
+    <a href="Servicios.html">Servicios</a>
+</nav>
+
+<div class="catalogo">
+
+    <div class="libro">
+        <img src="img/kagurabachi-509x800.jpeg" alt="Kagurabachi Tomo 1">
+        <h3>Kagurabachi — Tomo 1</h3>
+        <p><strong>Autor:</strong> Takeru Hokazono</p>
+        <p>Manga de acción y venganza protagonizado por un joven espadachín.</p>
+    </div>
+
+    <div class="libro">
+        <img src="img/eubius.jpeg" alt="Libro Troll">
+        <h3>Libro Troll</h3>
+        <p><strong>Autor:</strong> El Rubius</p>
+        <p>Un libro lleno de retos, bromas y humor troll del famoso youtuber.</p>
+    </div>
+
+    <div class="libro">
+        <img src="img/inazuma.jpeg" alt="Inazuma Eleven Tomo 1">
+        <h3>Inazuma Eleven — Tomo 1</h3>
+        <p><strong>Autor:</strong> Tenya Yabuno</p>
+        <p>Manga de fútbol y superación basado en el famoso videojuego.</p>
+    </div>
+
+</div>
 
 </body>
 </html>
